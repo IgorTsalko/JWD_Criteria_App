@@ -1,10 +1,10 @@
-package by.tc.task01.entity.builder;
+package by.tc.task01.dao;
 
 import by.tc.task01.entity.*;
 
 import java.util.Map;
 
-public class EntityBuilder {
+public class EntityFactory {
 
     public Appliance createDevice(String deviceName, Map<String, String> parameters) {
         return switch (deviceName) {

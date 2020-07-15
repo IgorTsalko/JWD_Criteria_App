@@ -3,7 +3,7 @@ package by.tc.task01.dao.impl;
 import by.tc.task01.dao.ApplianceDAO;
 import by.tc.task01.dao.exception.DaoException;
 import by.tc.task01.entity.Appliance;
-import by.tc.task01.entity.builder.EntityBuilder;
+import by.tc.task01.dao.EntityFactory;
 import by.tc.task01.entity.criteria.Criteria;
 
 import java.io.BufferedReader;
@@ -19,7 +19,7 @@ import java.util.Map;
 public class ApplianceDAOImpl implements ApplianceDAO {
 
 	private final Path filePath = Paths.get("E:/Studies/Java/testFolder/appliances_db.txt");
-	private final EntityBuilder entityBuilder = new EntityBuilder();
+	private final EntityFactory entityFactory = new EntityFactory();
 
 	@Override
 	public List<Appliance> find(Criteria criteria) throws DaoException {
@@ -33,7 +33,7 @@ public class ApplianceDAOImpl implements ApplianceDAO {
 			while ((line = fileReader.readLine()) != null) {
 				if (line.startsWith(applianceName) && checkForParameters(line, criteria.getCriteria())) {
 					parameters = extractParametersFromLine(line);
-					appliance = entityBuilder.createDevice(applianceName, parameters);
+					appliance = entityFactory.createDevice(applianceName, parameters);
 					appliances.add(appliance);
 				}
 			}
