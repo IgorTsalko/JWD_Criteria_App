@@ -2,7 +2,7 @@ package by.tc.task01.entity;
 
 import java.util.Objects;
 
-public class Oven extends Appliance {
+public class Oven implements Appliance {
 
     private final double POWER_CONSUMPTION;
     private final double WEIGHT;
@@ -19,6 +19,30 @@ public class Oven extends Appliance {
         this.DEPTH = depth;
         this.HEIGHT = height;
         this.WIDTH = width;
+    }
+
+    public double getPOWER_CONSUMPTION() {
+        return POWER_CONSUMPTION;
+    }
+
+    public double getWEIGHT() {
+        return WEIGHT;
+    }
+
+    public double getCAPACITY() {
+        return CAPACITY;
+    }
+
+    public double getDEPTH() {
+        return DEPTH;
+    }
+
+    public double getHEIGHT() {
+        return HEIGHT;
+    }
+
+    public double getWIDTH() {
+        return WIDTH;
     }
 
     @Override

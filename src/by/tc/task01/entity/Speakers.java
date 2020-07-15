@@ -2,7 +2,7 @@ package by.tc.task01.entity;
 
 import java.util.Objects;
 
-public class Speakers extends Appliance{
+public class Speakers implements Appliance{
 
     private final double POWER_CONSUMPTION;
     private final double NUMBER_OF_SPEAKERS;
@@ -14,6 +14,22 @@ public class Speakers extends Appliance{
         this.NUMBER_OF_SPEAKERS = numberOfSpeakers;
         this.FREQUENCY_RANGE = frequencyRange;
         this.CORD_LENGTH = cordLength;
+    }
+
+    public double getPOWER_CONSUMPTION() {
+        return POWER_CONSUMPTION;
+    }
+
+    public double getNUMBER_OF_SPEAKERS() {
+        return NUMBER_OF_SPEAKERS;
+    }
+
+    public String getFREQUENCY_RANGE() {
+        return FREQUENCY_RANGE;
+    }
+
+    public double getCORD_LENGTH() {
+        return CORD_LENGTH;
     }
 
     @Override
@@ -34,7 +50,7 @@ public class Speakers extends Appliance{
 
     @Override
     public String toString() {
-        return "Speakers{" +
+        return this.getClass().getSimpleName() + "{" +
                 "POWER_CONSUMPTION=" + POWER_CONSUMPTION +
                 ", NUMBER_OF_SPEAKERS=" + NUMBER_OF_SPEAKERS +
                 ", FREQUENCY_RANGE=" + FREQUENCY_RANGE +

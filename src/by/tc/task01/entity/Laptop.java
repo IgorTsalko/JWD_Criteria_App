@@ -2,7 +2,7 @@ package by.tc.task01.entity;
 
 import java.util.Objects;
 
-public class Laptop extends Appliance{
+public class Laptop implements Appliance{
 
     private final double BATTERY_CAPACITY;
     private final String OS;
@@ -19,6 +19,30 @@ public class Laptop extends Appliance{
         this.SYSTEM_MEMORY = systemMemory;
         this.CPU = CPU;
         this.DISPLAY_INCHS = displayInchs;
+    }
+
+    public double getBATTERY_CAPACITY() {
+        return BATTERY_CAPACITY;
+    }
+
+    public String getOS() {
+        return OS;
+    }
+
+    public double getMEMORY_ROM() {
+        return MEMORY_ROM;
+    }
+
+    public double getSYSTEM_MEMORY() {
+        return SYSTEM_MEMORY;
+    }
+
+    public double getCPU() {
+        return CPU;
+    }
+
+    public double getDISPLAY_INCHS() {
+        return DISPLAY_INCHS;
     }
 
     @Override

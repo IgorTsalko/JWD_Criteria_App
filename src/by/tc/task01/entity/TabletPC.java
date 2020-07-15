@@ -2,7 +2,7 @@ package by.tc.task01.entity;
 
 import java.util.Objects;
 
-public class TabletPC extends Appliance{
+public class TabletPC implements Appliance{
 
     private final double BATTERY_CAPACITY;
     private final double DISPLAY_INCHES;
@@ -17,6 +17,26 @@ public class TabletPC extends Appliance{
         this.MEMORY_ROM = memoryRom;
         this.FLASH_MEMORY_CAPACITY = flashMemoryCapacity;
         this.COLOR = color;
+    }
+
+    public double getBATTERY_CAPACITY() {
+        return BATTERY_CAPACITY;
+    }
+
+    public double getDISPLAY_INCHES() {
+        return DISPLAY_INCHES;
+    }
+
+    public double getMEMORY_ROM() {
+        return MEMORY_ROM;
+    }
+
+    public double getFLASH_MEMORY_CAPACITY() {
+        return FLASH_MEMORY_CAPACITY;
+    }
+
+    public String getCOLOR() {
+        return COLOR;
     }
 
     @Override

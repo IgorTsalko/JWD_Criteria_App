@@ -49,11 +49,11 @@ public class ApplianceDAOImpl implements ApplianceDAO {
 
 		for (Map.Entry<String, Object> paramPair : parameters.entrySet()) {
 			StringBuilder formedCriterion = new StringBuilder()
-					.append(paramPair.getKey())
+					.append(paramPair.getKey().toLowerCase())
 					.append("=")
 					.append(String.valueOf(paramPair.getValue()).toLowerCase());
 
-			if (!line.matches(".+" + formedCriterion + "((, .+)|(\\s*$))")) {
+			if (!line.toLowerCase().matches(".+" + formedCriterion + "((, .+)|(\\s*$))")) {
 				result = false;
 				break;
 			}

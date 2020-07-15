@@ -2,7 +2,7 @@ package by.tc.task01.entity;
 
 import java.util.Objects;
 
-public class VacuumCleaner extends Appliance{
+public class VacuumCleaner implements Appliance{
 
     private final double POWER_CONSUMPTION;
     private final String FILTER_TYPE;
@@ -19,6 +19,30 @@ public class VacuumCleaner extends Appliance{
         this.WAND_TYPE = wandType;
         this.MOTOR_SPEED_REGULATION = motorSpeedRegulation;
         this.CLEANING_WIDTH = cleaningWidth;
+    }
+
+    public double getPOWER_CONSUMPTION() {
+        return POWER_CONSUMPTION;
+    }
+
+    public String getFILTER_TYPE() {
+        return FILTER_TYPE;
+    }
+
+    public String getBAG_TYPE() {
+        return BAG_TYPE;
+    }
+
+    public String getWAND_TYPE() {
+        return WAND_TYPE;
+    }
+
+    public double getMOTOR_SPEED_REGULATION() {
+        return MOTOR_SPEED_REGULATION;
+    }
+
+    public double getCLEANING_WIDTH() {
+        return CLEANING_WIDTH;
     }
 
     @Override

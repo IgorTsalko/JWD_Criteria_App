@@ -2,7 +2,7 @@ package by.tc.task01.entity;
 
 import java.util.Objects;
 
-public class Refrigerator extends Appliance{
+public class Refrigerator implements Appliance{
 
     private final double POWER_CONSUMPTION;
     private final double WEIGHT;
@@ -19,6 +19,30 @@ public class Refrigerator extends Appliance{
         this.OVERALL_CAPACITY = overallCapacity;
         this.HEIGHT = height;
         this.WIDTH = width;
+    }
+
+    public double getPOWER_CONSUMPTION() {
+        return POWER_CONSUMPTION;
+    }
+
+    public double getWEIGHT() {
+        return WEIGHT;
+    }
+
+    public double getFREEZER_CAPACITY() {
+        return FREEZER_CAPACITY;
+    }
+
+    public double getOVERALL_CAPACITY() {
+        return OVERALL_CAPACITY;
+    }
+
+    public double getHEIGHT() {
+        return HEIGHT;
+    }
+
+    public double getWIDTH() {
+        return WIDTH;
     }
 
     @Override

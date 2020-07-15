@@ -4,6 +4,7 @@ import static by.tc.task01.entity.criteria.SearchCriteria.*;
 
 import by.tc.task01.entity.Appliance;
 import by.tc.task01.entity.criteria.Criteria;
+import by.tc.task01.main.print.PrintApplianceInfo;
 import by.tc.task01.service.ApplianceService;
 import by.tc.task01.service.ServiceFactory;
 import by.tc.task01.service.exception.ServiceException;
@@ -29,11 +30,11 @@ public class Main {
 
         //////////////////////////////////////////////////////////////////
 
-        criteriaOven = new Criteria(Oven.class.getSimpleName());
-        criteriaOven.add(Oven.DEPTH.toString(), 60);
-        criteriaOven.add(Oven.CAPACITY.toString(), 33);
+        Criteria criteriaVacuumCleaner = new Criteria(VacuumCleaner.class.getSimpleName());
+        criteriaVacuumCleaner.add(VacuumCleaner.FILTER_TYPE.toString(), "A");
+        criteriaVacuumCleaner.add(VacuumCleaner.BAG_TYPE.toString(), "A2");
 
-        appliances = service.find(criteriaOven);
+        appliances = service.find(criteriaVacuumCleaner);
 
         PrintApplianceInfo.print(appliances);
 
@@ -44,7 +45,7 @@ public class Main {
         criteriaTabletPC.add(TabletPC.DISPLAY_INCHES.toString(), 14);
         criteriaTabletPC.add(TabletPC.MEMORY_ROM.toString(), 8000);
 
-        appliances = service.find(criteriaTabletPC);// find(Object...obj)
+        appliances = service.find(criteriaTabletPC);
 
         PrintApplianceInfo.print(appliances);
 
@@ -55,6 +56,24 @@ public class Main {
         criteriaRefrigerator.add(Refrigerator.POWER_CONSUMPTION.toString(), 150);
 
         appliances = service.find(criteriaRefrigerator);
+
+        PrintApplianceInfo.print(appliances);
+
+        //////////////////////////////////////////////////////////////////
+
+        Criteria criteriaLaptop = new Criteria(Laptop.class.getSimpleName());
+        criteriaLaptop.add(Laptop.OS.toString(), "Windows");
+
+        appliances = service.find(criteriaLaptop);
+
+        PrintApplianceInfo.print(appliances);
+
+        //////////////////////////////////////////////////////////////////
+
+        Criteria criteriaSpeakers = new Criteria(Speakers.class.getSimpleName());
+        criteriaSpeakers.add(Speakers.FREQUENCY_RANGE.toString(), "2-4");
+
+        appliances = service.find(criteriaSpeakers);
 
         PrintApplianceInfo.print(appliances);
 
