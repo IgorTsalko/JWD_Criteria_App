@@ -26,7 +26,6 @@ public class ApplianceServiceImpl implements ApplianceService {
         try {
             appliances = applianceDAO.find(criteria);
         } catch (DaoException e) {
-            // далее нужно передать контроллеру и в лог. Но контроллера у нас нет
             throw new ServiceException(e);
         }
 
